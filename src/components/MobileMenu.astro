@@ -1,0 +1,43 @@
+---
+import MenuItem from "./MenuItem.astro";
+
+---
+
+<ul id="mobileMenu">
+    <MenuItem
+        href="/"
+        text="Inicio" />
+    <MenuItem
+        href="/locals"
+        text="Locales" />
+    <MenuItem
+        href="/reserved"
+        text="Reservas" />
+    <MenuItem
+        href="/galery"
+        text="Galerías" />
+    <MenuItem
+        href="/menu"
+        text="Menú" />
+    <MenuItem
+        href="/contact"
+        text="Contáctenos" />
+</ul>
+
+<style>
+    ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #333;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        color: #fff;
+        top: 5rem;
+        padding: 0;
+        margin: 0;
+    }
+</style>

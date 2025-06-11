@@ -1,0 +1,29 @@
+---
+interface Props {
+    href: string;
+    text: string;
+}
+
+const { href, text }: Props = Astro.props;
+---
+
+<li><a href={ href }>{ text }</a></li>
+
+<style>
+li {
+    list-style: none;
+    text-decoration: none;
+    width: 100%;
+
+    a {
+        display: block;
+        width: 100%;
+        color: currentColor;
+        text-decoration: none;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        font-family: sans-serif;
+        margin: 0;
+    }
+}
+</style>

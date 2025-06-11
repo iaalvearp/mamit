@@ -1,0 +1,102 @@
+---
+
+
+---
+<nav>
+    <picture>
+        <img src="assets/mamit-logo.svg" alt="logo mami-t">
+    </picture>
+    <div>
+        <svg
+        id="closeMenu"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+        <svg
+        id="openMenu"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+    </div>
+</nav>
+
+<style>
+nav {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background-color: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+
+
+    picture {
+        width: 10rem;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+
+    div {
+        display: grid;
+        grid-template-columns: 1;
+        grid-template-rows: 1;
+        place-content: center;
+        svg {
+            width: 1.75rem;
+            height: 1.75rem;
+            cursor: pointer;
+            color: #333;
+            grid-column: 1/2;
+            grid-row: 1/2;
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+        }
+        #closeMenu {
+            transform: scale(0);
+        }
+    }
+}
+
+
+
+</style>
+
+<script type="module">
+    const $ = (selector) => document.querySelector(selector);
+    const openMenu = $("#openMenu");
+    const closeMenu = $("#closeMenu");
+    const menu = $("#mobileMenu");
+
+    openMenu?.addEventListener("click", () => {
+        menu.style.transform = "translateY(0)";
+        menu.style.position = "fixed";
+        openMenu.style.transform = "scale(0)";
+        closeMenu.style.transform = "scale(1)";
+    });
+    closeMenu?.addEventListener("click", () => {
+        menu.style.transform = "translateY(-100%)";
+        menu.style.position = "unset";
+        openMenu.style.transform = "scale(1)";
+        closeMenu.style.transform = "scale(0)";
+    });
+</script>
