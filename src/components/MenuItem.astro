@@ -7,23 +7,32 @@ interface Props {
 const { href, text }: Props = Astro.props;
 ---
 
-<li><a href={ href }>{ text }</a></li>
+<li><a class="menu-item" href={ href }>{ text }</a></li>
 
 <style>
-li {
-    list-style: none;
-    text-decoration: none;
-    width: 100%;
-
-    a {
-        display: block;
-        width: 100%;
-        color: currentColor;
+    li {
+        list-style: none;
         text-decoration: none;
-        font-size: 1.2rem;
-        padding: 0.5rem 1rem;
-        font-family: sans-serif;
-        margin: 0;
+        width: 100%;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+
+        a {
+            display: block;
+            width: 100%;
+            color: currentColor;
+            text-decoration: none;
+            font-size: 1.25rem;
+            padding: 0.375rem 0;
+            letter-spacing: 0.25rem;
+            font-family: "Bebas Reg", Sans-serif;
+            text-transform: uppercase;
+            margin: 0;
+        }
     }
-}
+
+    .active {
+        background-color: var(--primary-color);
+        color: var(--bg-color);   
+    }
 </style>

@@ -6,7 +6,7 @@
     <picture>
         <img src="assets/mamit-logo.svg" alt="logo mami-t">
     </picture>
-    <div>
+    <div class="menu-icons">
         <svg
         id="closeMenu"
         width="24"
@@ -32,7 +32,8 @@
 nav {
     display: flex;
     width: 100%;
-    height: 5rem;
+    height: 10vh;
+    max-height: 74px;
     position: fixed;
     align-items: center;
     justify-content: space-between;
@@ -43,6 +44,7 @@ nav {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10;
 
 
     picture {
@@ -61,11 +63,11 @@ nav {
         grid-template-columns: 1;
         grid-template-rows: 1;
         place-content: center;
+        color: var(--secondary-color);
         svg {
             width: 1.75rem;
             height: 1.75rem;
             cursor: pointer;
-            color: #333;
             grid-column: 1/2;
             grid-row: 1/2;
             transform: scale(1);
